@@ -154,6 +154,14 @@
   var dica = document.getElementById('dica');
   var promptInstalar = null;
 
+  // quando o aviso aparece, a agenda encolhe e fica acima dele (não cobre o menu inferior)
+  var areaApp = document.getElementById('app');
+  new MutationObserver(function () {
+    areaApp.style.paddingBottom = aviso.classList.contains('mostra')
+      ? 'calc(92px + env(safe-area-inset-bottom, 0px))'
+      : 'env(safe-area-inset-bottom, 0px)';
+  }).observe(aviso, { attributes: true, attributeFilter: ['class'] });
+
   var jaInstalado = window.matchMedia('(display-mode: standalone)').matches ||
                     window.navigator.standalone === true;
   var dispensado = false;
