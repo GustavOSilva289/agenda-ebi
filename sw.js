@@ -1,7 +1,7 @@
 // Service worker da Agenda EBI.
 // Guarda só a "casca" do app (index, manifest, ícones). O calendário em si
 // vem do Apps Script (dentro do iframe) e nunca é guardado aqui.
-var VERSAO = 'agenda-ebi-v1';
+var VERSAO = 'agenda-ebi-v3';
 var ARQUIVOS = [
   './',
   './index.html',
